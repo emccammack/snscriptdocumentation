@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition><![CDATA[(function checkScriptUpdates() {
+	var docConfig = new GlideRecord('x_343375_scriptdoc_script_documentation_configuration');
+	docConfig.query();
+	while(docConfig.next()){
+		
+	}
+	
+	
+})();]]></condition>
+        <conditional>false</conditional>
+        <name>Collect Script Information</name>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2019-05-08 07:47:41</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[(function getScripts() {
+	var ignoredPhrases = gs.getProperty('x_343375_scriptdoc.ignored_phrases').toString().split(',');
+	var docConfig = new GlideRecord('x_343375_scriptdoc_script_documentation_configuration');
+	docConfig.query();
+	while(docConfig.next()){
+		var gr = new GlideRecord(docConfig.getValue('table'));
+		gr.addEncodedQuery(docConfig.getValue('condition'));
+		gr.query();
+		while(gr.next()){
+			var scriptText = gr.getValue(docConfig.script_field.element);
+			var comments = scriptText.match(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1');
+			var commentString = [];
+			for(var i in comments){
+				if(ignoredPhrases.indexOf(comments[i]) > -1){
+					continue;
+				}
+				commentString.push(comments[i].replace('//','').replace('/*').replace('*/'));
+			}
+			if(commentString.length > 0){
+				commentString = commentString.toString().trim();
+				var scriptDoc = new GlideRecord('x_343375_scriptdoc_script_documentation');
+				scriptDoc.addQuery('script_name',gr.getValue('sys_id'));
+				scriptDoc.query();
+				if(scriptDoc.next()){
+					scriptDoc.code_notes = commentString;
+					scriptDoc.update();
+				}
+				else{
+					var newScriptDoc = new GlideRecord('x_343375_scriptdoc_script_documentation');
+					newScriptDoc.initialize();
+					newScriptDoc.script_name = gr.getValue('sys_id');
+					newScriptDoc.table = gr.getValue('sys_class_name');
+					newScriptDoc.code_notes = commentString;
+					newScriptDoc.insert();
+				}
+			}
+		}
+	}
+})();]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-08 08:16:42</sys_created_on>
+        <sys_id>1272235ddb1133004fe4f36f29961948</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Collect Script Information</sys_name>
+        <sys_package display_value="Script Documentation" source="x_343375_scriptdoc">e09b9f95db1133004fe4f36f299619f8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Script Documentation">e09b9f95db1133004fe4f36f299619f8</sys_scope>
+        <sys_update_name>sysauto_script_1272235ddb1133004fe4f36f29961948</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-08 09:20:13</sys_updated_on>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

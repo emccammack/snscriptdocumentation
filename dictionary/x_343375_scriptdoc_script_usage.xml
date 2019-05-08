@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Script Usage" max_length="40" name="x_343375_scriptdoc_script_usage" type="collection">
+        <element label="Script Documentation" max_length="32" name="script_documentation" reference="x_343375_scriptdoc_script_documentation" type="reference"/>
+        <element label="Script Record" max_length="32" name="script_record" type="document_id"/>
+        <index name="index">
+            <element name="script_record"/>
+        </index>
+        <index name="index2">
+            <element name="script_documentation"/>
+        </index>
+    </element>
+</database>

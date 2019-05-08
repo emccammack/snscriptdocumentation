@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Script Documentation" language="en" table="x_343375_scriptdoc_script_documentation">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Script Documentation</label>
+            <language>en</language>
+            <name>x_343375_scriptdoc_script_documentation</name>
+            <plural>Script Documentations</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-05-08 07:21:17</sys_created_on>
+            <sys_id>236c9fd5db1133004fe4f36f299619da</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Script Documentation</sys_name>
+            <sys_package display_value="Script Documentation" source="x_343375_scriptdoc">e09b9f95db1133004fe4f36f299619f8</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Script Documentation">e09b9f95db1133004fe4f36f299619f8</sys_scope>
+            <sys_update_name>sys_documentation_x_343375_scriptdoc_script_documentation__en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-05-08 07:21:17</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

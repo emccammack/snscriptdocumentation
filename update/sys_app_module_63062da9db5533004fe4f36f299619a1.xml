@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Script Documentation">54a5e5a9db5533004fe4f36f299619b9</application>
+        <assessment/>
+        <content_page/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Configuration</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_343375_scriptdoc_script_documentation_configuration</name>
+        <order>200</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-05-08 17:23:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>63062da9db5533004fe4f36f299619a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Configuration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Script Documentation" source="x_343375_scriptdoc">e09b9f95db1133004fe4f36f299619f8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Script Documentation">e09b9f95db1133004fe4f36f299619f8</sys_scope>
+        <sys_update_name>sys_app_module_63062da9db5533004fe4f36f299619a1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-05-08 17:23:27</sys_updated_on>
+        <timeline_page/>
+        <title>Configuration</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

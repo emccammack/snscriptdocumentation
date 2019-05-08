@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Script Documentation Configuration" max_length="40" name="x_343375_scriptdoc_script_documentation_configuration" type="collection">
+        <element dependent="table" dependent_on_field="table" label="Condition" max_length="4000" name="condition" type="conditions" use_dependent_field="true"/>
+        <element label="Script Field" max_length="32" name="script_field" reference="sys_dictionary" reference_qual="javascript:&quot;name=&quot; + current.table + &quot;^EQ&quot;" type="reference" use_reference_qualifier="advanced"/>
+        <element display="true" label="Table Name" max_length="32" name="table" type="table_name"/>
+        <index name="index">
+            <element name="script_field"/>
+        </index>
+        <index name="index2">
+            <element name="table"/>
+        </index>
+    </element>
+</database>
